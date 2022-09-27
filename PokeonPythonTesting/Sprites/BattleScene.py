@@ -2,6 +2,21 @@ import arcade
 
 menu_options = [["Fight", "Bag"], ["Pokemon", "Run"]]
 
+
+def do_health(current):
+    maxHealth = 100
+    maxDashes = 10
+    dashConvert = int(maxHealth / maxDashes)
+    currentDashes = int(current / dashConvert)
+    remainingHealth = maxDashes - currentDashes
+
+    healthDisplay = '▮' * currentDashes
+    remainingDisplay = ' ' * remainingHealth
+    percent = str(int((current / maxHealth) * 100)) + "%"
+    print("|" + healthDisplay + remainingDisplay + "|")
+    print("    " + percent)
+
+
 class BattleScene(arcade.Sprite):
     def __init__(self):
         super().__init__()
@@ -12,6 +27,8 @@ class BattleScene(arcade.Sprite):
 
 
 class BattleMenu(arcade.Sprite):
+
+
     def __init__(self):
         super().__init__()
         self.texture = arcade.load_texture(
@@ -21,8 +38,18 @@ class BattleMenu(arcade.Sprite):
         self.h_option = 0
         self.v_option = 0
 
+
+
+
     def MenuSelection(self, top_bottom, left_right):
         print("Selected: " + menu_options[top_bottom][left_right])
+        if menu_options[top_bottom][left_right] == "Pokemon":
+            print("Rotom (Fire): \n")
+            do_health(70)
+            print()
+            print(f"Bulbasaur: \n")
+            do_health(80)
+
         if menu_options[top_bottom][left_right] == "Run":
             return 9
 
@@ -96,3 +123,4 @@ class OpponentPokemonHealth(arcade.Sprite):
         super().__init__()
         self.texture = arcade.load_texture("C:/Users/gfans/PycharmProjects/GameThing/Resources/Still/Battle/OpponentHealth.png")
         self.alpha = 0
+

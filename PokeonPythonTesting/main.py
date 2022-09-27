@@ -50,6 +50,7 @@ class MyGame(arcade.Window):
         self.battleScene_list = None
         self.battleScene = None
 
+
         # If you have sprite lists, you should create them here,
         # and set them to None
 
@@ -60,6 +61,7 @@ class MyGame(arcade.Window):
         self.player = Player()
 
         self.battleScene_list = arcade.SpriteList()
+        self.shape_list = []
 
         self.battleScene = BattleScene()
         self.battleScene.right = SCREEN_WIDTH
@@ -140,7 +142,6 @@ class MyGame(arcade.Window):
         self.playermenu_list.draw()
         self.player_list.draw()
         self.battleScene_list.draw()
-
 
         # Call draw() on all your sprite lists below
 
