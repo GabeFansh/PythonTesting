@@ -44,10 +44,10 @@ class BattleMenu(arcade.Sprite):
     def MenuSelection(self, top_bottom, left_right):
         print("Selected: " + menu_options[top_bottom][left_right])
         if menu_options[top_bottom][left_right] == "Pokemon":
-            print("Rotom (Fire): \n")
+            print("Rotom (Fire):")
             do_health(70)
             print()
-            print(f"Bulbasaur: \n")
+            print(f"Bulbasaur:")
             do_health(80)
 
         if menu_options[top_bottom][left_right] == "Run":

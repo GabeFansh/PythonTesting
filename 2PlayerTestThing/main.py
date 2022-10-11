@@ -106,6 +106,8 @@ class MyGame(arcade.Window):
         elif self.d_pressed and not self.a_pressed:
             self.opponent_sprite.change_x = MOVEMENT_SPEED
 
+
+
         self.opponent_list.update()
 
         self.player_physics_engine.update()
